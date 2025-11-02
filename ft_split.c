@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 13:12:06 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/01 17:37:22 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/02 10:17:07 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static char	**filltab(char **tab, const char *s, char c, size_t nbword)
 		start = i;
 		while (s[i] != c && s[i] != '\0')
 			i++;
-		tab[count] = ft_substr(s, start, i - start + 1);
+		tab[count] = ft_substr(s, start, i - start);
 		if (!tab[count])
 			return (freeall(tab, count));
 		start = 0;

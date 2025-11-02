@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 18:23:12 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/01 22:33:29 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/02 17:27:25 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strrchr(const char *s, int c)
 
 	size = ft_strlen(s);
 	s += size;
-	while (size > 0)
+	while (size >= 0)
 	{
 		if (*s == (char)c)
 		{
