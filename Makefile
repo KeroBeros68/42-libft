@@ -33,7 +33,8 @@ STR = \
 		ft_split.c \
 		ft_itoa.c \
 		ft_strmapi.c \
-		ft_strdup.c 
+		ft_strdup.c \
+		ft_convertbase.c
 
 # Char Manipulation
 CHR = \
