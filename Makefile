@@ -1,7 +1,10 @@
-#.SILENT:
+.SILENT:
 
 # Output Name
 NAME = libft.a
+
+# Directories
+OBJ_DIR = Obj
 
 # Memory Manipulation
 MEM = \
@@ -70,9 +73,9 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra
 
 # Object name
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o)
 
-OBJS_BONUS = $(LST:.c=.o)
+OBJS_BONUS = $(LST:%.c=$(OBJ_DIR)/%.o)
 
 #Rules
 all: $(NAME)
@@ -80,14 +83,17 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar -rcs $@ $(OBJS)
 
-%.o: %.c
+$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+	mkdir -p $(OBJ_DIR)
 
 bonus: $(OBJS_BONUS)
 	ar rcs $(NAME) $(OBJS_BONUS)
 
 clean:
-	rm -rf $(OBJS) $(OBJS_BONUS)
+	rm -rf $(OBJ_DIR) $(OBJS_BONUS)
 
 fclean: clean
 	rm -rf $(NAME)

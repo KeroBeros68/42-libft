@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:19:40 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/02 12:15:02 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/03 10:02:12 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,14 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*now;
 	t_list	*next;
 
-	if (!lst || !del)
+	if (!lst || !*lst ||!del)
 		return ;
-	now = *lst;
-	while (now != NULL)
+	while (*lst != NULL)
 	{
-		next = now->next;
-		del(now->content);
-		free(now);
-		now = next;
+		next = (*lst)->next;
+		ft_lstdelone(*lst, del);
+		*lst = next;
 	}
-	*lst = NULL;
 }

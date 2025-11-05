@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 17:11:52 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/02 10:46:38 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/03 10:50:59 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
 		return ;
-	if (!*lst)
-		*lst = new;
-	else
-	{
-		new->next = *lst;
-		*lst = new;
-	}
+	new->next = *lst;
+	*lst = new;
 }

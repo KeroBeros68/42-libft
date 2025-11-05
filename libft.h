@@ -6,16 +6,14 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:07:15 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/02 12:15:19 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/03 11:22:24 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
-# include <stdio.h>
 # include <unistd.h>
-# include <bsd/string.h>
 
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
