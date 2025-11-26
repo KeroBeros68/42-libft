@@ -31,7 +31,8 @@ MEM = \
 		ft_memmove.c \
 		ft_memchr.c \
 		ft_memcmp.c \
-		ft_calloc.c
+		ft_calloc.c \
+		ft_realloc.c
 
 # String Manipulation
 STR = \
@@ -71,7 +72,11 @@ FD = \
 		ft_printf.c
 
 BOOL = \
-		ft_check_base.c
+		ft_check_base.c \
+		ft_min.c \
+		ft_max.c \
+		ft_min_size.c \
+		ft_max_size.c
 LST = \
 		ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \

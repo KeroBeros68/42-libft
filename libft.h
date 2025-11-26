@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:07:15 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/26 18:19:21 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/26 21:14:00 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
+void	*ft_realloc(void *ptr, const size_t new_size, const size_t old_size);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 //##### FD #####//
@@ -80,6 +81,9 @@ int		ft_printf(const char *s, ...);
 
 //##### BOOL #####//
 int		ft_check_base(const char *base, size_t len_base);
+int		ft_min(int a, int b);
+int		ft_max(int a, int b);
+size_t	ft_min_size(size_t a, size_t b);
 
 //##### LST #####//
 t_list	*ft_lstnew(void *content);
