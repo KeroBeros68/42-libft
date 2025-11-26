@@ -6,16 +6,22 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 17:32:01 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/01 22:20:34 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/26 18:20:53 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(char *s, int fd)
+ssize_t	ft_putendl_fd(char *s, int fd)
 {
+	ssize_t	ret;
+
 	if (!s)
-		return ;
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+		return (0);
+	ret = ft_putstr_fd(s, fd);
+	if (ret == -1)
+		return (-1);
+	if (ft_putchar_fd('\n', fd) == -1)
+		return (-1);
+	return (ret + 1);
 }

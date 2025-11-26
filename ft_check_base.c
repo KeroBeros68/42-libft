@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_check_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 17:36:19 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/26 17:56:33 by kebertra         ###   ########.fr       */
+/*   Created: 2025/11/26 15:33:02 by kebertra          #+#    #+#             */
+/*   Updated: 2025/11/26 17:37:16 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-ssize_t	ft_putnbr_fd(int n, int fd)
+int	ft_check_base(const char *base, size_t len_base)
 {
-	long int	nbr;
-	ssize_t		ret;
+	size_t	i;
+	size_t	j;
 
-	ret = 0;
-	nbr = n;
-	if (nbr < 0)
+	i = 0;
+	j = 0;
+	if (len_base < 2)
+		return (FALSE);
+	while (i < len_base)
 	{
-		if (ft_putchar_fd('-', fd) == -1)
-			return (-1);
-		ret++;
-		nbr *= -1;
+		if (base[i] == '+' || base[i] == '-')
+			return (FALSE);
+		j = i + 1;
+		while (j < len_base)
+		{
+			if (base[i] == base[j])
+				return (FALSE);
+			j++;
+		}
+		i++;
 	}
-	if (nbr > 9)
-		ret += ft_putnbr_fd(nbr / 10, fd);
-	if (ft_putchar_fd(nbr % 10 + '0', fd) == -1)
-		return (-1);
-	return (ret++);
+	return (TRUE);
 }

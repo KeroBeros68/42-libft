@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:07:15 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/05 21:07:30 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/26 18:19:21 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,15 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+# include <limits.h>
 
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
+//##### Define #####//
+//	Num Base
+# define HEX_MAJ "0123456789ABCDEF"
+# define HEX_MIN "0123456789abcdef"
+# define DEC "0123456789"
+//	Bool
 # define TRUE 1
 # define FALSE 0
 
@@ -51,7 +57,6 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char	*ft_convert_base(unsigned long nbr, const char *base);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *nptr);
 
@@ -65,10 +70,16 @@ void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 //##### FD #####//
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
+ssize_t	ft_putchar_fd(char c, int fd);
+ssize_t	ft_putstr_fd(char *s, int fd);
+ssize_t	ft_putendl_fd(char *s, int fd);
+ssize_t	ft_putnbr_fd(int n, int fd);
+ssize_t	ft_putnbr_base_u_fd(long long nbr, const char *base,
+			const int u, int fd);
+int		ft_printf(const char *s, ...);
+
+//##### BOOL #####//
+int		ft_check_base(const char *base, size_t len_base);
 
 //##### LST #####//
 t_list	*ft_lstnew(void *content);
