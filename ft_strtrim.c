@@ -6,12 +6,26 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 17:52:07 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/02 12:10:54 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:33:18 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Supprime les caractères spécifiés au début et à la fin d'une chaîne.
+ *
+ * Parcourt la chaîne `s1` et retire tous les caractères présents dans `set`
+ * au début et à la fin. Retourne une nouvelle chaîne allouée contenant
+ * le résultat.
+ *
+ * @param s1   Chaîne à nettoyer.
+ * @param set  Chaîne de caractères à retirer.
+ *
+ * @return char*  Nouvelle chaîne allouée sans les caractères de `set`
+ * en bordure,
+ *                ou NULL en cas d'erreur.
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;

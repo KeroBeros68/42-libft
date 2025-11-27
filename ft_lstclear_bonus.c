@@ -6,12 +6,22 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:19:40 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/03 10:02:12 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:15:45 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Libère et supprime tous les éléments d'une liste chaînée.
+ *
+ * Parcourt la liste pointée par `lst`, applique la fonction `del`
+ * au contenu de chaque élément, puis libère chaque maillon.
+ * À la fin, le pointeur de liste est mis à NULL.
+ *
+ * @param lst  Adresse du pointeur vers le premier élément de la liste.
+ * @param del  Fonction utilisée pour libérer le contenu de chaque élément.
+ */
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*next;

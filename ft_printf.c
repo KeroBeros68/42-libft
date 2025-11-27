@@ -6,12 +6,26 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:26:13 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/26 17:58:27 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/26 21:32:59 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Écrit une chaîne ou un pointeur en gérant les valeurs NULL
+ * pour ft_printf.
+ *
+ * Pour un spécificateur 's', écrit la chaîne ou "(null)" si NULL.
+ * Pour un spécificateur 'p', écrit l'adresse du pointeur au format hexadécimal,
+ * ou "(nil)" si NULL.
+ *
+ * @param args  Liste d'arguments variable issue de va_list.
+ * @param c     Spécificateur de format ('s' pour chaîne, 'p' pour pointeur).
+ *
+ * @return ssize_t  Nombre de caractères écrits,
+ * ou -1 en cas d'erreur d'écriture.
+ */
 static ssize_t	printf_check_null(va_list args, char c)
 {
 	void	*tmp;
@@ -35,6 +49,19 @@ static ssize_t	printf_check_null(va_list args, char c)
 	return (ret + 2);
 }
 
+/**
+ * @brief Traite un spécificateur de format pour ft_printf et écrit le résultat.
+ *
+ * Selon le caractère de format `c`, récupère l'argument correspondant dans
+ * `args` et l'écrit sur la sortie standard.
+ *
+ * @param args  Liste d'arguments variable issue de va_list.
+ * @param c     Spécificateur de format 
+ * ('d', 'i', 'u', 'c', 's', 'p', 'x', 'X', '%').
+ *
+ * @return ssize_t  Nombre de caractères écrits,
+ * ou 0 si le spécificateur n'est pas reconnu.
+ */
 static ssize_t	printf_print_res(va_list args, char c)
 {
 	ssize_t	ret;
@@ -57,6 +84,21 @@ static ssize_t	printf_print_res(va_list args, char c)
 	return (ret);
 }
 
+/**
+ * @brief Imprime une chaîne formatée sur la sortie standard.
+ *
+ * Analyse la chaîne `s` et remplace les spécificateurs de format (%) par
+ * les arguments correspondants fournis via la liste `...`.
+ *
+ * @param s  Chaîne de format contenant du texte et des spécificateurs (%).
+ * @param ... Arguments variables correspondant aux spécificateurs dans `s`.
+ *
+ * @return int  Nombre total de caractères écrits,
+ * ou -1 en cas d'erreur d'écriture.
+ *
+ * @note Fonction similaire à printf, mais limitée aux spécificateurs gérés
+ *       par `printf_print_res`.
+ */
 int	ft_printf(const char *s, ...)
 {
 	va_list		args;

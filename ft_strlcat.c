@@ -6,12 +6,25 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 13:01:30 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/02 12:13:36 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:27:35 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Concatène une chaîne à la fin d'une autre en limitant la taille totale.
+ *
+ * Ajoute la chaîne `src` à la fin de `dst`, en s'assurant que la taille
+ * totale n'excède pas `size`. Termine toujours la chaîne résultante par '\0'.
+ *
+ * @param dst   Chaîne de destination.
+ * @param src   Chaîne source à ajouter.
+ * @param size  Taille maximale de la chaîne résultante, incluant le '\0'.
+ *
+ * @return size_t  Longueur totale de la chaîne qu'on a voulu créer
+ *                 (longueur initiale de dst + longueur de src).
+ */
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t			i;

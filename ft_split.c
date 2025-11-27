@@ -6,12 +6,23 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 13:12:06 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/02 10:17:07 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:24:19 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Compte le nombre de mots dans une chaîne séparés par un délimiteur.
+ *
+ * Parcourt la chaîne `s` et compte le nombre de segments non vides
+ * séparés par le caractère `c`.
+ *
+ * @param s  Chaîne de caractères à analyser.
+ * @param c  Caractère délimiteur des mots.
+ *
+ * @return size_t  Nombre de mots trouvés dans la chaîne.
+ */
 static size_t	countword(char const *s, char c)
 {
 	size_t	i;
@@ -32,6 +43,17 @@ static size_t	countword(char const *s, char c)
 	return (word);
 }
 
+/**
+ * @brief Libère un tableau de chaînes de caractères.
+ *
+ * Parcourt le tableau `tab` et libère chaque chaîne jusqu'à `count`,
+ * puis libère le tableau lui-même.
+ *
+ * @param tab    Tableau de chaînes à libérer.
+ * @param count  Nombre de chaînes à libérer.
+ *
+ * @return char**  Toujours NULL, pour simplifier la gestion d'erreur.
+ */
 static char	**freeall(char **tab, size_t count)
 {
 	size_t	i;
@@ -43,6 +65,20 @@ static char	**freeall(char **tab, size_t count)
 	return (NULL);
 }
 
+/**
+ * @brief Remplit un tableau de chaînes à partir d'une chaîne source.
+ *
+ * Découpe la chaîne `s` en mots séparés par le caractère `c` et
+ * stocke chaque mot dans le tableau `tab`. Si une allocation échoue,
+ * libère tout et retourne NULL.
+ *
+ * @param tab      Tableau de chaînes à remplir.
+ * @param s        Chaîne source à découper.
+ * @param c        Caractère délimiteur des mots.
+ * @param nbword   Nombre de mots à extraire.
+ *
+ * @return char**  Tableau rempli de chaînes ou NULL en cas d'erreur.
+ */
 static char	**filltab(char **tab, const char *s, char c, size_t nbword)
 {
 	size_t	count;
@@ -71,6 +107,17 @@ static char	**filltab(char **tab, const char *s, char c, size_t nbword)
 	return (tab);
 }
 
+/**
+ * @brief Découpe une chaîne en un tableau de mots selon un délimiteur.
+ *
+ * Alloue un tableau de chaînes et y stocke les mots extraits de `s`,
+ * séparés par le caractère `c`. Le tableau est terminé par un pointeur NULL.
+ *
+ * @param s  Chaîne de caractères à découper.
+ * @param c  Caractère délimiteur des mots.
+ *
+ * @return char**  Tableau de chaînes alloué, ou NULL en cas d'erreur.
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**tab;

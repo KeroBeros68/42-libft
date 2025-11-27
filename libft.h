@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:07:15 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/26 21:14:00 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/27 10:14:35 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct s_list
 }	t_list;
 
 //##### A Ski #####//
+
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -43,6 +44,7 @@ int		ft_toupper(int c);
 int		ft_tolower(int c);
 
 //##### STR #####//
+
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
@@ -61,6 +63,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi(const char *nptr);
 
 //##### MEM #####//
+
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
@@ -71,6 +74,7 @@ void	*ft_realloc(void *ptr, const size_t new_size, const size_t old_size);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
 //##### FD #####//
+
 ssize_t	ft_putchar_fd(char c, int fd);
 ssize_t	ft_putstr_fd(char *s, int fd);
 ssize_t	ft_putendl_fd(char *s, int fd);
@@ -80,12 +84,14 @@ ssize_t	ft_putnbr_base_u_fd(long long nbr, const char *base,
 int		ft_printf(const char *s, ...);
 
 //##### BOOL #####//
+
 int		ft_check_base(const char *base, size_t len_base);
 int		ft_min(int a, int b);
 int		ft_max(int a, int b);
 size_t	ft_min_size(size_t a, size_t b);
 
 //##### LST #####//
+
 t_list	*ft_lstnew(void *content);
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));

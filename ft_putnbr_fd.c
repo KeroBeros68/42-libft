@@ -6,12 +6,23 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 17:36:19 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/26 17:56:33 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/26 21:33:30 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Écrit un entier sur le descripteur de fichier donné.
+ *
+ * Envoie le nombre `n` sur le descripteur `fd`. Gère les nombres négatifs
+ * en ajoutant un '-' devant.
+ *
+ * @param n   Entier à écrire.
+ * @param fd  Descripteur de fichier où écrire le nombre.
+ *
+ * @return ssize_t  Nombre total de caractères écrits, ou -1 en cas d'erreur.
+ */
 ssize_t	ft_putnbr_fd(int n, int fd)
 {
 	long int	nbr;

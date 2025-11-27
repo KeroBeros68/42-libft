@@ -6,12 +6,22 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 17:50:59 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/01 22:31:38 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/27 12:13:35 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Compte le nombre de chiffres d'un entier.
+ *
+ * Calcule combien de caractères sont nécessaires pour représenter
+ * l'entier `n` en base 10, sans tenir compte du signe.
+ *
+ * @param n  Entier dont on veut connaître le nombre de chiffres.
+ *
+ * @return size_t  Nombre de chiffres de `n`.
+ */
 static size_t	countchar(int n)
 {
 	size_t	count;
@@ -25,6 +35,17 @@ static size_t	countchar(int n)
 	return (count);
 }
 
+/**
+ * @brief Remplit une chaîne avec la représentation décimale d'un entier.
+ *
+ * Place les chiffres de `n` dans la chaîne `s`, en partant de la fin.
+ * Si `sign` est non nul, ajoute un '-' au début de la chaîne.
+ *
+ * @param s      Chaîne dans laquelle écrire le nombre.
+ * @param n      Entier à convertir.
+ * @param count  Nombre total de caractères représentant le nombre (hors '\0').
+ * @param sign   Indique si le nombre est négatif (1) ou non (0).
+ */
 static void	setnum(char *s, int n, size_t count, int sign)
 {
 	size_t	i;
@@ -44,6 +65,17 @@ static void	setnum(char *s, int n, size_t count, int sign)
 	}
 }
 
+/**
+ * @brief Convertit un entier en chaîne de caractères.
+ *
+ * Gère le cas particulier de INT_MIN, détermine le signe, calcule le
+ * nombre de chiffres nécessaires et remplit la chaîne résultat.
+ *
+ * @param n  Entier à convertir en chaîne.
+ *
+ * @return char*  Chaîne représentant l'entier, ou NULL en cas d'échec
+ *                d'allocation.
+ */
 char	*ft_itoa(int n)
 {
 	char	*s;
