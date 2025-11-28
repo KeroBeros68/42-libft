@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 18:13:46 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:15:00 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/28 18:39:59 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
+	bool			head;
 }	t_list;
 
 //##### Function #####//
