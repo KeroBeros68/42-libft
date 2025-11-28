@@ -23,7 +23,6 @@ NAME = libft.a
 # Directories
 OBJ_DIR = Obj
 
-# Memory Manipulation
 MEM = \
 		ft_memset.c \
 		ft_bzero.c \
@@ -34,7 +33,6 @@ MEM = \
 		ft_calloc.c \
 		ft_realloc.c
 
-# String Manipulation
 STR = \
 		ft_strlen.c \
 		ft_strlcpy.c \
@@ -53,7 +51,6 @@ STR = \
 		ft_strmapi.c \
 		ft_strdup.c
 
-# Char Manipulation
 CHR = \
 		ft_isalpha.c \
 		ft_isdigit.c \
@@ -71,12 +68,15 @@ FD = \
 		ft_putnbr_base_u_fd.c \
 		ft_printf.c
 
-BOOL = \
-		ft_check_base.c \
+MATHS = \
 		ft_min.c \
 		ft_max.c \
 		ft_min_size.c \
 		ft_max_size.c
+
+UTILS = \
+		ft_check_base.c
+
 LST = \
 		ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \
@@ -88,20 +88,32 @@ LST = \
 		ft_lstmap_bonus.c \
 		ft_lstdelone_bonus.c
 
-SRCS = \
-		$(MEM) \
-		$(STR) \
-		$(CHR) \
-		$(FD)  \
-		$(BOOL)\
-		$(LST)
+SRCS =	$(addprefix Mem/,$(MEM)) \
+		$(addprefix Str/,$(STR)) \
+		$(addprefix Char/,$(CHR)) \
+		$(addprefix Fd/,$(FD)) \
+		$(addprefix Maths/,$(MATHS)) \
+		$(addprefix Utils/,$(UTILS)) \
+		$(addprefix List/,$(LST))
+
+vpath %.c ./Mem:./Str:./Char:./Fd:./Maths:./List:./Utils
+
+INCLUDES = \
+			libft.h \
+			Char/libft_char.h \
+			Mem/libft_mem.h \
+			Str/libft_string.h \
+			List/libft_list.h \
+			Maths/libft_maths.h \
+			Utils/libft_utils.h \
+			Fd/libft_fd.h
 
 # Compilation
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -I.
 
 # Object name
-OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o)
+OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 
 #
 TOTAL := $(words $(OBJS))
@@ -114,18 +126,18 @@ CURRENT := 0
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@printf "$(CYAN)Création de la bibliothèque $(NAME)...$(RESET) "
-	@if ar -rcs $@ $(OBJS) 2>/dev/null; then \
+	printf "$(CYAN)Création de la bibliothèque $(NAME)...$(RESET) "
+	if ar -rcs $@ $(OBJS) 2>/dev/null; then \
 		echo "$(GREEN)✓$(RESET)"; \
 	else \
 		echo "$(RED)✗$(RESET)"; \
 		ar -rcs $@ $(OBJS); \
 	fi
 
-$(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
+$(OBJ_DIR)/%.o: %.c $(INCLUDES) | $(OBJ_DIR)
 	$(eval CURRENT=$(shell echo $$(($(CURRENT)+1))))
-	@printf "$(CYAN)[%2d/%2d]$(RESET) %-30s " $(CURRENT) $(TOTAL) $(notdir $<)
-	@if $(CC) $(CFLAGS) -c $< -o $@ 2>/dev/null; then \
+	printf "$(CYAN)[%2d/%2d]$(RESET) %-30s " $(CURRENT) $(TOTAL) $(notdir $<)
+	if $(CC) $(CFLAGS) -c $< -o $@ 2>/dev/null; then \
 		echo "$(GREEN)✓$(RESET)"; \
 	else \
 		echo "$(RED)✗$(RESET)"; \
@@ -133,8 +145,8 @@ $(OBJ_DIR)/%.o: %.c | $(OBJ_DIR)
 	fi
 
 $(OBJ_DIR):
-	@printf "$(CYAN)Création du répertoire $(OBJ_DIR)...$(RESET) "
-	@if mkdir -p $(OBJ_DIR) 2>/dev/null; then \
+	printf "$(CYAN)Création du répertoire $(OBJ_DIR)...$(RESET) "
+	if mkdir -p $(OBJ_DIR) 2>/dev/null; then \
 		echo "$(GREEN)✓$(RESET)"; \
 	else \
 		echo "$(RED)✗$(RESET)"; \
@@ -144,8 +156,8 @@ $(OBJ_DIR):
 bonus: re
 
 clean:
-	@printf "$(CYAN)Suppression de $(OBJ_DIR)...$(RESET) "
-	@if [ -d "$(OBJ_DIR)" ]; then \
+	printf "$(CYAN)Suppression de $(OBJ_DIR)...$(RESET) "
+	if [ -d "$(OBJ_DIR)" ]; then \
 		$(RM) -rf $(OBJ_DIR) && \
 		echo "$(GREEN)✓ Fichiers objets supprimés$(RESET)"; \
 	else \
@@ -153,13 +165,23 @@ clean:
 	fi
 
 fclean: clean
-	@printf "$(CYAN)Suppression de $(NAME)...$(RESET) "
-	@if rm $(NAME) 2>/dev/null; then \
+	printf "$(CYAN)Suppression de $(NAME)...$(RESET) "
+	if rm $(NAME) 2>/dev/null; then \
 		echo "$(GREEN)✓$(RESET)"; \
 	else \
 		echo "$(YELLOW)⚠ Déjà supprimée$(RESET)"; \
 	fi
 
+testeur: fclean
+	rm -rf libft-fairy && \
+	git clone https://github.com/gcxd68/libft-fairy.git && \
+	cd libft-fairy && ./run.sh; \
+	cd .. && rm -rf libft-fairy; \
+	rm -rf libftTester && \
+	git clone https://github.com/Tripouille/libftTester.git && \
+	cd libftTester && make; \
+	cd .. && rm -rf libftTester;
+
 re: fclean all
 
-.PHONY: clean fclean re bonus
+.PHONY: clean fclean re bonus testeur
