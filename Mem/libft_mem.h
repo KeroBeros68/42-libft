@@ -6,14 +6,14 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 15:05:41 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 15:06:56 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/28 13:43:09 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_MEM_H
 # define LIBFT_MEM_H
 
-# include "libft.h"
+# include "../libft.h"
 
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
