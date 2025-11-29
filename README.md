@@ -1,8 +1,33 @@
-Libft
+# Libft
 
-Libft est une bibliothèque personnelle en C regroupant des fonctions utilitaires réutilisables pour la manipulation de chaînes, caractères, mémoire, listes et autres opérations courantes. Développée dans le cadre du cursus 42, elle respecte les normes de codage strictes (Norminette).
+Libft est une bibliothèque C personnelle regroupant des fonctions utilitaires réutilisables pour la manipulation de chaînes, de mémoire, de listes et d'opérations courantes. Elle est conçue pour être claire, modulaire et conforme aux normes 42 (Norminette).
 
-📂 Structure du projet
+---
+
+## Table des matières
+
+- [Présentation](#présentation)  
+- [Structure du projet](#structure-du-projet)  
+- [Installation](#installation)  
+- [Utilisation](#utilisation)  
+- [Exemples](#exemples)  
+- [Modules et fonctions principales](#modules-et-fonctions-principales)  
+- [Bonnes pratiques & tests](#bonnes-pratiques--tests)  
+- [Auteur & contact](#auteur--contact)
+
+---
+
+## Présentation
+
+Cette bibliothèque propose des fonctions courantes ré-implémentées en C, utiles pour des projets pédagogiques ou des petits projets personnels : manipulation de chaînes, gestion de mémoire, opérations sur listes chaînées, E/S simplifiées, etc.
+
+---
+
+## Structure du projet
+
+La bibliothèque est organisée en modules pour faciliter la maintenance et la lecture :
+
+```
 libft/
 ├── Makefile
 ├── libft.h
@@ -27,48 +52,63 @@ libft/
 └── Utils/
     ├── *.c
     └── Utils.h
+```
 
+Le header principal `libft.h` inclut les headers de chaque module pour faciliter l'inclusion dans vos projets.
 
-Chaque sous-dossier contient un header .h et ses fichiers .c associés.
+---
 
-Le header principal libft.h inclut tous les modules pour simplifier l’inclusion.
-
-⚙️ Installation
+## Installation
 
 Cloner le dépôt :
 
-git clone <url_du_dépôt>
-cd libft
-
+```bash
+git clone https://github.com/KeroBeros68/42-libft.git
+cd 42-libft
+```
 
 Compiler la bibliothèque :
 
+```bash
 make
+```
 
+Les cibles Make utiles :
 
-Génère la bibliothèque statique libft.a.
+- `make` : compile et crée `libft.a`
+- `make clean` : supprime les fichiers objets (`*.o`)
+- `make fclean` : supprime les fichiers objets et `libft.a`
+- `make re` : exécute `fclean` puis `make`
 
-Nettoyer les fichiers objets :
+---
 
-make clean      # supprime les fichiers .o
-make fclean     # supprime .o et libft.a
-make re         # supprime et recompiles
+## Utilisation
 
-📝 Utilisation
+Inclure le header principal dans votre code :
 
-Inclure le header principal :
-
+```c
 #include "libft.h"
+```
 
+Compiler et lier la bibliothèque lors de la construction de votre exécutable :
 
-Compiler et lier la bibliothèque :
-
+```bash
 gcc main.c -L. -lft -o main
+```
 
-💡 Exemples
+Ou en précisant l'archive directement :
 
-Exemple 1 : Calcul de la longueur d’une chaîne
+```bash
+gcc main.c libft.a -o main
+```
 
+---
+
+## Exemples
+
+Exemple 1 — Calcul de la longueur d'une chaîne :
+
+```c
 #include "libft.h"
 #include <stdio.h>
 
@@ -78,10 +118,11 @@ int main(void)
     printf("Length: %zu\n", ft_strlen(str));
     return 0;
 }
+```
 
+Exemple 2 — Ajout d'un nœud en tête d'une liste :
 
-Exemple 2 : Ajout d’un nœud en tête d’une liste
-
+```c
 #include "libft.h"
 #include <stdio.h>
 
@@ -90,30 +131,45 @@ int main(void)
     t_list *list = ft_lstnew("first");
     ft_lstadd_front(&list, ft_lstnew("new head"));
     printf("Head: %s\n", (char *)list->content);
+    ft_lstclear(&list, free);
     return 0;
 }
+```
 
-📦 Modules et fonctions principales
-Module	Fonctions principales
-Char	ft_isalpha, ft_isdigit, ft_isalnum, ft_isascii, ft_isprint, ft_toupper, ft_tolower
-Str	ft_strlen, ft_strdup, ft_strcpy, ft_strjoin, ft_strchr, ft_strrchr, ft_strncmp, ft_substr, ft_strtrim, ft_split
-Fd	ft_putchar_fd, ft_putstr_fd, ft_putendl_fd, ft_putnbr_fd
-List	ft_lstnew, ft_lstadd_front, ft_lstadd_back, ft_lstlast, ft_lstsize, ft_lstdelone, ft_lstclear, ft_lstiter, ft_lstmap
-Mem	ft_memset, ft_bzero, ft_memcpy, ft_memmove, ft_memchr, ft_memcmp, ft_calloc
-Maths	ft_abs, ft_max, ft_min, ft_pow
-Utils	ft_swap, ft_itoa, ft_atol, ft_strcmp, ft_free_split
-📌 Bonnes pratiques
+---
 
-Respect strict des normes 42 (Norminette).
+## Modules et fonctions principales
 
-Documentation complète pour chaque fonction.
+Voici un aperçu des modules et de leurs fonctions les plus courantes :
 
-Tests unitaires recommandés pour chaque module.
+| Module | Fonctions principales |
+|---|---|
+| Char | ft_isalpha, ft_isdigit, ft_isalnum, ft_isascii, ft_isprint, ft_toupper, ft_tolower |
+| Str | ft_strlen, ft_strdup, ft_strcpy, ft_strjoin, ft_strchr, ft_strrchr, ft_strncmp, ft_substr, ft_strtrim, ft_split |
+| Fd | ft_putchar_fd, ft_putstr_fd, ft_putendl_fd, ft_putnbr_fd |
+| List | ft_lstnew, ft_lstadd_front, ft_lstadd_back, ft_lstlast, ft_lstsize, ft_lstdelone, ft_lstclear, ft_lstiter, ft_lstmap |
+| Mem | ft_memset, ft_bzero, ft_memcpy, ft_memmove, ft_memchr, ft_memcmp, ft_calloc |
+| Maths | ft_abs, ft_max, ft_min, ft_pow |
+| Utils | ft_swap, ft_itoa, ft_atol, ft_strcmp, ft_free_split |
 
-Chaque module a son propre header pour faciliter maintenance et extension.
+Chaque module possède son propre header (ex. `Str/Str.h`) et ses fichiers sources pour faciliter la maintenance.
 
-👤 Auteur
+---
 
-Développé par Kevin Bertrand pour le cursus 42.
+## Bonnes pratiques & tests
 
+- Respect strict des normes 42 (Norminette).
+- Documenter chaque fonction (prototype, comportement, valeurs de retour).
+- Écrire des tests unitaires pour chaque module (ex: utiliser un petit framework de test ou des programmes de test standalone).
+- Ajouter des exemples d'utilisation dans un dossier `examples/` (optionnel mais recommandé).
+
+---
+
+## Auteur & contact
+
+Développé par Kevin Bertrand (KeroBeros68) pour le cursus 42.  
 Contact : kevinbertrand68.pro@gmail.com
+
+---
+
+Licence : libre d'utilisation à des fins pédagogiques. (Ajouter un fichier LICENSE si nécessaire).
