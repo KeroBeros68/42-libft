@@ -42,12 +42,10 @@ STR = \
 		ft_strrchr.c \
 		ft_strncmp.c \
 		ft_strnstr.c \
-		ft_atoi.c \
 		ft_substr.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
 		ft_split.c \
-		ft_itoa.c \
 		ft_strmapi.c \
 		ft_strdup.c
 
@@ -65,17 +63,25 @@ FD = \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c	\
-		ft_putnbr_base_u_fd.c \
+		ft_putnbr_base_u_fd.c
+
+
+PRINTF = \
 		ft_printf.c
 
 MATHS = \
+		ft_abs.c \
 		ft_min.c \
 		ft_max.c \
 		ft_min_size.c \
-		ft_max_size.c
+		ft_max_size.c \
+
 
 UTILS = \
-		ft_check_base.c
+		ft_atoi.c \
+		ft_itoa.c \
+		ft_check_base.c \
+		ft_swap.c
 
 LST = \
 		ft_lstnew_bonus.c \
@@ -94,9 +100,10 @@ SRCS =	$(addprefix Mem/,$(MEM)) \
 		$(addprefix Fd/,$(FD)) \
 		$(addprefix Maths/,$(MATHS)) \
 		$(addprefix Utils/,$(UTILS)) \
-		$(addprefix List/,$(LST))
+		$(addprefix List/,$(LST)) \
+		$(addprefix Printf/,$(PRINTF))
 
-vpath %.c ./Mem:./Str:./Char:./Fd:./Maths:./List:./Utils
+vpath %.c ./Mem:./Str:./Char:./Fd:./Maths:./List:./Utils:./Printf
 
 INCLUDES = \
 			libft.h \
@@ -106,7 +113,8 @@ INCLUDES = \
 			List/libft_list.h \
 			Maths/libft_maths.h \
 			Utils/libft_utils.h \
-			Fd/libft_fd.h
+			Fd/libft_fd.h \
+			Printf/libft_printf.h
 
 # Compilation
 CC = cc

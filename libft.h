@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:07:15 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:44:59 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/29 17:08:05 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # include "Mem/libft_mem.h"
 # include "Str/libft_string.h"
 # include "Utils/libft_utils.h"
+# include "Printf/libft_printf.h"
 
 //##### Define #####//
 //	Num Base

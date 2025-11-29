@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_fd.h                                         :+:      :+:    :+:   */
+/*   libft_printf.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 18:12:06 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/29 17:08:16 by kebertra         ###   ########.fr       */
+/*   Created: 2025/11/29 17:07:03 by kebertra          #+#    #+#             */
+/*   Updated: 2025/11/29 17:08:21 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_FD_H
-# define LIBFT_FD_H
+#ifndef LIBFT_PRINTF_H
+# define LIBFT_PRINTF_H
 
 # include "../libft.h"
 
-ssize_t	ft_putchar_fd(char c, int fd);
-ssize_t	ft_putstr_fd(char *s, int fd);
-ssize_t	ft_putendl_fd(char *s, int fd);
-ssize_t	ft_putnbr_fd(int n, int fd);
-ssize_t	ft_putnbr_base_u_fd(long long nbr, const char *base,
-			const int u, int fd);
+int		ft_printf(const char *s, ...);
 #endif
