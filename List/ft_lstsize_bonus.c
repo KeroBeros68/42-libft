@@ -6,29 +6,40 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 17:50:30 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:06:12 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/29 21:01:58 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Compte le nombre d'éléments dans une liste chaînée.
+ * @brief Count the number of nodes in a linked list.
  *
- * Parcourt la liste `lst` et incrémente un compteur pour chaque maillon.
+ * Traverses the list starting from `lst` and returns the total number
+ * of nodes. Supports both standard singly-linked lists and circular
+ * lists where the head node is marked with `head == 1`.
  *
- * @param lst  Premier élément de la liste.
+ * For singly-linked lists, the size is the number of nodes until `next == NULL`.
+ * For circular lists, the size is the number of nodes until the next node
+ * points back to the head node or a node marked with `head == 1`.
  *
- * @return int  Nombre total d'éléments dans la liste.
+ * @param lst Pointer to the first node of the list.
+ *
+ * @return The number of nodes in the list. Returns 0 if the list is empty.
+ *
+ * @note Ensure that for circular lists, exactly one node has `head == 1`
+ *       to avoid infinite loops.
  */
-int	ft_lstsize(t_list *lst)
+size_t	ft_lstsize(t_list *lst)
 {
-	int	size;
+	t_list	*start;
+	ssize_t	size;
 
 	size = 1;
 	if (!lst)
 		return (0);
-	while (lst->next)
+	start = lst;
+	while (lst->next && lst->next != start && lst->next->head != 1)
 	{
 		size++;
 		lst = lst->next;

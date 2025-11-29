@@ -6,20 +6,22 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:10:56 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:05:53 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/29 21:40:09 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Supprime un élément d’une liste chaînée.
+ * @brief Delete a single node from a linked list.
  *
- * Applique la fonction `del` au contenu du maillon,
- * puis libère le maillon lui-même.
+ * Frees the memory of a single node `lst` and its content using the provided
+ * `del` function. For circular lists, if the node being deleted is the head,
+ * the next node is marked as the new head. The function does nothing if `lst`
+ * is NULL.
  *
- * @param lst  Élément de liste à supprimer.
- * @param del  Fonction utilisée pour libérer le contenu du maillon.
+ * @param lst Pointer to the node to delete.
+ * @param del Function used to free the node's content.
  */
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
@@ -27,5 +29,7 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 		return ;
 	if (del)
 		del(lst->content);
+	if (lst->head && lst->next)
+		lst->next->head = true;
 	free(lst);
 }
