@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 13:12:06 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:04:46 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/29 17:17:24 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,28 +44,6 @@ static size_t	countword(char const *s, char c)
 }
 
 /**
- * @brief Libère un tableau de chaînes de caractères.
- *
- * Parcourt le tableau `tab` et libère chaque chaîne jusqu'à `count`,
- * puis libère le tableau lui-même.
- *
- * @param tab    Tableau de chaînes à libérer.
- * @param count  Nombre de chaînes à libérer.
- *
- * @return char**  Toujours NULL, pour simplifier la gestion d'erreur.
- */
-static char	**freeall(char **tab, size_t count)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < count)
-		free(tab[i++]);
-	free(tab);
-	return (NULL);
-}
-
-/**
  * @brief Remplit un tableau de chaînes à partir d'une chaîne source.
  *
  * Découpe la chaîne `s` en mots séparés par le caractère `c` et
@@ -99,7 +77,7 @@ static char	**filltab(char **tab, const char *s, char c, size_t nbword)
 			i++;
 		tab[count] = ft_substr(s, start, i - start);
 		if (!tab[count])
-			return (freeall(tab, count));
+			return (ft_free_split(tab));
 		start = 0;
 		count++;
 	}

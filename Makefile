@@ -81,7 +81,8 @@ UTILS = \
 		ft_atoi.c \
 		ft_itoa.c \
 		ft_check_base.c \
-		ft_swap.c
+		ft_swap.c \
+		ft_free_split.c
 
 LST = \
 		ft_lstnew_bonus.c \

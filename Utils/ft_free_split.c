@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_utils.h                                      :+:      :+:    :+:   */
+/*   ft_free_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 18:17:44 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/29 17:16:11 by kebertra         ###   ########.fr       */
+/*   Created: 2025/11/29 17:15:28 by kebertra          #+#    #+#             */
+/*   Updated: 2025/11/29 17:15:57 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_UTILS_H
-# define LIBFT_UTILS_H
+#include "libft_utils.h"
 
-# include "../libft.h"
+void	*ft_free_split(char **tab)
+{
+	size_t	i;
 
-void	ft_swap(int *a, int *b);
-void	*ft_free_split(char **tab);
-char	*ft_itoa(int n);
-int		ft_atoi(const char *nptr);
-int		ft_check_base(const char *base, size_t len_base);
-
-#endif
+	if (!tab)
+		return (NULL);
+	i = 0;
+	while (tab[i])
+		free(tab[i++]);
+	free(tab);
+	return (NULL);
+}
