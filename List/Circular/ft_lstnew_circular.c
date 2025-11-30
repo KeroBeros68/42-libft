@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
+/*   ft_lstnew_circular.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 16:24:10 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/28 18:42:44 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/30 14:44:58 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../libft_list.h"
 
 /**
- * @brief Create a new linked list element.
+ * @brief Creates a new node for a circular linked list.
  *
- * Allocates and initializes a new `t_list` node with the given `content`.
- * The `next` pointer is set to NULL and the `head` flag is set to false.
+ * This function allocates and initializes a new circular list node.
+ * The node's content is set to @p content, its `head` flag is cleared,
+ * and its `next` pointer points to itself to form a valid single-node
+ * circular list.
  *
- * @param content  Pointer to the content to store in the new node.
+ * @param content  Pointer to the data to store in the new node.
  *
- * @return t_list*  Pointer to the newly created node,
- * or NULL if allocation fails.
+ * @return A pointer to the newly created node, or NULL if allocation fails.
  */
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew_c(void *content)
 {
 	t_list	*lst;
 
@@ -31,7 +32,7 @@ t_list	*ft_lstnew(void *content)
 	if (!lst)
 		return (NULL);
 	lst->content = content;
-	lst->next = NULL;
 	lst->head = false;
+	lst->next = lst;
 	return (lst);
 }

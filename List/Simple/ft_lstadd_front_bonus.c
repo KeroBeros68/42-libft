@@ -6,29 +6,27 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 17:11:52 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/28 19:02:43 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/30 14:46:02 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../libft_list.h"
 
 /**
- * @brief Add a new element to the front of a linked list and mark it as head.
+ * @brief Adds a new node at the beginning of a singly linked list.
  *
- * Inserts `new` at the beginning of the list pointed to by `lst`. Updates
- * the `head` flag: the previous first element is set to false, and the
- * new element is set to true.
+ * This function inserts the node @p new at the front of the list
+ * pointed to by @p lst, making it the new head of the list.
  *
- * @param lst  Pointer to the pointer of the first element of the list.
- * @param new  New element to add at the front of the list.
+ * @param lst  Address of a pointer to the first node of the list.
+ * @param new  Pointer to the node to add at the front.
+ *
+ * @note If @p lst or @p new is NULL, the function does nothing.
  */
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
 		return ;
-	if (*lst)
-		(*lst)->head = false;
 	new->next = *lst;
 	*lst = new;
-	(*lst)->head = true;
 }

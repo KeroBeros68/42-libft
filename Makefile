@@ -84,7 +84,7 @@ UTILS = \
 		ft_swap.c \
 		ft_free_split.c
 
-LST = \
+LST_S = \
 		ft_lstnew_bonus.c \
 		ft_lstadd_front_bonus.c \
 		ft_lstsize_bonus.c \
@@ -93,7 +93,17 @@ LST = \
 		ft_lstclear_bonus.c \
 		ft_lstiter_bonus.c \
 		ft_lstmap_bonus.c \
-		ft_lstdelone_bonus.c
+		ft_lstdelone_bonus.c 
+
+LST_C = \
+		ft_lst_relink.c \
+		ft_lstdelone_circular.c \
+		ft_lsthead_update.c \
+		ft_lstpredecessor.c \
+		ft_lstclear_c.c \
+		ft_lstadd_circular.c \
+		ft_lstnew_circular.c \
+		ft_lstsize_circular.c
 
 SRCS =	$(addprefix Mem/,$(MEM)) \
 		$(addprefix Str/,$(STR)) \
@@ -101,10 +111,11 @@ SRCS =	$(addprefix Mem/,$(MEM)) \
 		$(addprefix Fd/,$(FD)) \
 		$(addprefix Maths/,$(MATHS)) \
 		$(addprefix Utils/,$(UTILS)) \
-		$(addprefix List/,$(LST)) \
+		$(addprefix List/,$(LST_S)) \
+		$(addprefix List/,$(LST_C)) \
 		$(addprefix Printf/,$(PRINTF))
 
-vpath %.c ./Mem:./Str:./Char:./Fd:./Maths:./List:./Utils:./Printf
+vpath %.c ./Mem:./Str:./Char:./Fd:./Maths:./List/Simple:./List/Circular:./Utils:./Printf
 
 INCLUDES = \
 			libft.h \
@@ -191,6 +202,12 @@ testeur: fclean
 	cd libftTester && make; \
 	cd .. && rm -rf libftTester;
 
+testeur_lst: fclean
+	rm -rf libftTester && \
+	git clone https://github.com/Tripouille/libftTester.git && \
+	cd libftTester && make b; \
+	cd .. && rm -rf libftTester;
+
 re: fclean all
 
-.PHONY: clean fclean re bonus testeur
+.PHONY: clean fclean re bonus testeur testeur_lst

@@ -6,37 +6,34 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:19:40 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/29 22:05:44 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/30 14:46:31 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../libft_list.h"
 
 /**
- * @brief Clear a linked list, freeing all nodes and their content.
+ * @brief Deletes and frees all nodes of a singly linked list.
  *
- * Iterates through the list pointed to by `lst` and frees each node using
- * `ft_lstdelone`. Works for both linear and circular linked lists. After
- * clearing, the pointer to the list is set to NULL.
+ * This function iterates through the list pointed to by @p lst, applies
+ * the @p del function to each node's content, and frees each node.
+ * After execution, the list pointer is set to NULL.
  *
- * @param lst Pointer to the pointer of the first node of the list.
- * @param del Function used to free the content of each node.
+ * @param lst  Address of a pointer to the first node of the list.
+ * @param del  Function used to delete the content of each node.
+ *
+ * @note If @p lst, @p *lst, or @p del is NULL, the function does nothing.
  */
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*start;
 	t_list	*next;
 
 	if (!lst || !*lst || !del)
 		return ;
-	start = *lst;
-	while (*lst && (*lst != start || start->head == 0))
+	while (*lst)
 	{
 		next = (*lst)->next;
 		ft_lstdelone(*lst, del);
 		*lst = next;
-		// après la première suppression, start n'est plus la tête
-		start->head = 0;
 	}
-	*lst = NULL;
 }

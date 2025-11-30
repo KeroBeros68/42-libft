@@ -6,29 +6,23 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 17:57:46 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/29 20:57:21 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/11/30 14:47:32 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "../libft_list.h"
 
 /**
- * @brief Return the last node of a linked list.
+ * @brief Returns the last node of a circular or singly linked list.
  *
- * Traverses the list starting from `lst` and returns a pointer to the
- * last node. Supports both standard singly-linked lists and circular
- * lists where the head node is marked with `head == 1`.
+ * This function traverses the list starting from @p lst and returns
+ * the last node. For circular lists, it stops at the node whose next
+ * points back to the start or whose `head` flag is set. For singly
+ * linked lists, it stops at the node whose next is NULL.
  *
- * For singly-linked lists, the last node is the one with `next == NULL`.
- * For circular lists, the last node is the one whose `next` points back
- * to the head node or to a node marked with `head == 1`.
+ * @param lst  Pointer to a node in the list.
  *
- * @param lst Pointer to the first node of the list.
- *
- * @return Pointer to the last node of the list, or NULL if the list is empty.
- *
- * @note Ensure that for circular lists, exactly one node has `head == 1`
- *       to avoid infinite loops.
+ * @return Pointer to the last node, or NULL if @p lst is NULL.
  */
 t_list	*ft_lstlast(t_list *lst)
 {
