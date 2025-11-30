@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft_utils.h                                      :+:      :+:    :+:   */
+/*   ft_ternaries.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 18:17:44 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/30 15:00:36 by kebertra         ###   ########.fr       */
+/*   Created: 2025/11/30 14:55:15 by kebertra          #+#    #+#             */
+/*   Updated: 2025/11/30 15:00:32 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_UTILS_H
-# define LIBFT_UTILS_H
+#include "libft_utils.h"
 
-# include "../libft.h"
+void	*ft_ternaries_ptr(bool conditions, void *a, void *b)
+{
+	if (conditions)
+		return (a);
+	return (b);
+}
 
-void	ft_swap(int *a, int *b);
-void	*ft_free_split(char **tab);
-char	*ft_itoa(int n);
-int		ft_atoi(const char *nptr);
-int		ft_check_base(const char *base, size_t len_base);
-int		ft_ternaries_int(bool conditions, int a, int b);
-void	*ft_ternaries_ptr(bool conditions, void *a, void *b);
-
-#endif
+int	ft_ternaries_int(bool conditions, int a, int b)
+{
+	if (conditions)
+		return (a);
+	return (b);
+}
