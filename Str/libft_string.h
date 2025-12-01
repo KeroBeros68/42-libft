@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/27 12:59:25 by kebertra          #+#    #+#             */
-/*   Updated: 2025/12/01 14:32:26 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/01 14:38:56 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-bool	ft_str_check(char *s, int (*f)(size_t, const char*));
+bool	ft_str_check(char *s, int (*f)(char));
 
 #endif
