@@ -47,7 +47,8 @@ STR = \
 		ft_strtrim.c \
 		ft_split.c \
 		ft_strmapi.c \
-		ft_strdup.c
+		ft_strdup.c \
+		ft_str_check.c
 
 CHR = \
 		ft_isalpha.c \
