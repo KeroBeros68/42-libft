@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 14:04:53 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/30 14:45:15 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/01 19:26:03 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,13 @@
 size_t	ft_lstsize_c(t_list *lst)
 {
 	ssize_t	size;
+	t_list	*start;
 
 	size = 1;
+	start = lst;
 	if (!lst)
 		return (0);
-	while (!(*lst).next->head)
+	while ((*lst).next->next != start)
 	{
 		size++;
 		lst = lst->next;
