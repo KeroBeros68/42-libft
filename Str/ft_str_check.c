@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 12:35:37 by kebertra          #+#    #+#             */
-/*   Updated: 2025/12/01 14:39:03 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/01 14:41:36 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@
  * @note This function does not modify the input string.
  * @note Complexity: O(n).
  */
-bool	ft_str_check(char *s, int (*f)(char))
+bool	ft_str_check(char *s, int (*f)(int))
 {
 	size_t	i;
 
