@@ -68,7 +68,8 @@ FD = \
 
 
 PRINTF = \
-		ft_printf.c
+		ft_printf.c \
+		ft_printf_fd.c
 
 MATHS = \
 		ft_abs.c \
