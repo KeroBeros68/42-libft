@@ -156,6 +156,7 @@ Voici un aperçu des modules et de leurs fonctions les plus courantes :
 | Mem | ft_memset, ft_bzero, ft_memcpy, ft_memmove, ft_memchr, ft_memcmp, ft_calloc, ft_realloc |
 | Maths | ft_abs, ft_max, ft_min, ft_max_size, ft_min_size, ft_pow in progress|
 | Utils | ft_swap, ft_itoa, ft_atoi, ft_strcmp, ft_free_split, ft_check_base, ft_ternaries_ptr, ft_ternaries_int |
+| Printf | ft_printf, ft_printf_fd |
 
 Chaque module possède son propre header (ex. `Str/libft_str.h`) et ses fichiers sources pour faciliter la maintenance.
 
