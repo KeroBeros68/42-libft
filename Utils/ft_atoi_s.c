@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi _s.c                                       :+:      :+:    :+:   */
+/*   ft_atoi_s.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:18:48 by kebertra          #+#    #+#             */
-/*   Updated: 2025/12/02 15:40:33 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/02 15:47:08 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,5 @@ int	ft_atoi_s(const char *nptr, bool *error)
 		ret = ret * 10 + (nptr[i] - '0');
 		i++;
 	}
-	return (clamp_to_int_range(ret * sign, error));
+	return (clamp_to_int_range_s(ret * sign, error));
 }
