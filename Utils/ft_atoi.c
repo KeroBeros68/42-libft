@@ -6,22 +6,22 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:18:48 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:08:22 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/02 15:41:57 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Contraint un nombre long à la plage des entiers.
+ * @brief Clamps a long number to the range of a signed integer.
  *
- * Si `nb` est inférieur à INT_MIN, retourne INT_MIN.
- * Si `nb` est supérieur à INT_MAX, retourne INT_MAX.
- * Sinon, retourne `nb` converti en int.
+ * If `nb` is less than INT_MIN, INT_MIN is returned.
+ * If `nb` is greater than INT_MAX, INT_MAX is returned.
+ * Otherwise, the value is returned as a regular int.
  *
- * @param nb  Nombre long à contraindre.
+ * @param nb  The long number to clamp.
  *
- * @return int  Valeur contrainte dans la plage [INT_MIN, INT_MAX].
+ * @return int  The value constrained to the [INT_MIN, INT_MAX] range.
  */
 static int	clamp_to_int_range(long nb)
 {
@@ -33,17 +33,17 @@ static int	clamp_to_int_range(long nb)
 }
 
 /**
- * @brief Convertit une chaîne de caractères en entier.
+ * @brief Converts a character string to an integer.
  *
- * Ignore les espaces et les caractères de contrôle initiaux, puis
- * interprète un signe optionnel '+' ou '-'. Convertit ensuite la
- * suite de chiffres en entier.
+ * Skips leading whitespace and control characters, then processes
+ * an optional '+' or '-' sign. Afterwards, it converts the
+ * sequence of digits into an integer value.
  *
- * @param nptr  Chaîne de caractères à convertir.
+ * @param nptr  The string to convert.
  *
- * @return int  Valeur entière correspondante à la chaîne.
+ * @return int  The integer value represented by the string.
  *
- * @note La fonction utilise `clamp_to_int_range` pour gérer les dépassements.
+ * @note The function uses `clamp_to_int_range` to handle overflows.
  */
 int	ft_atoi(const char *nptr)
 {

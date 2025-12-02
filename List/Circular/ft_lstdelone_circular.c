@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 11:36:06 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/30 14:44:02 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/02 15:43:41 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@
  * @note If @p head, @p *head, or @p to_delete is NULL,
  * the function does nothing.
  */
-
 void	ft_lstdelone_c(t_list **head, t_list *to_delete,
 	void (*del)(void *))
 {

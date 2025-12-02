@@ -155,7 +155,7 @@ Voici un aperçu des modules et de leurs fonctions les plus courantes :
 | List Simple | ft_lst_relink, ft_lstadd_c, ft_lstclear_c, ft_lstdelone_c, ft_lsthead_update, ft_lstnew_c, ft_lst_predecessor, ft_lstsize_c |
 | Mem | ft_memset, ft_bzero, ft_memcpy, ft_memmove, ft_memchr, ft_memcmp, ft_calloc, ft_realloc |
 | Maths | ft_abs, ft_max, ft_min, ft_max_size, ft_min_size, ft_pow in progress|
-| Utils | ft_swap, ft_itoa, ft_atoi, ft_strcmp, ft_free_split, ft_check_base, ft_ternaries_ptr, ft_ternaries_int |
+| Utils | ft_swap, ft_itoa, ft_atoi, ft_atoi_s , ft_strcmp, ft_free_split, ft_check_base, ft_ternaries_ptr, ft_ternaries_int |
 | Printf | ft_printf, ft_printf_fd |
 
 Chaque module possède son propre header (ex. `Str/libft_str.h`) et ses fichiers sources pour faciliter la maintenance.

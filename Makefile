@@ -81,6 +81,7 @@ MATHS = \
 
 UTILS = \
 		ft_atoi.c \
+		ft_atoi_s.c \
 		ft_itoa.c \
 		ft_check_base.c \
 		ft_swap.c \
