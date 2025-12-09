@@ -6,14 +6,15 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:34:03 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/30 14:47:11 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/09 13:01:42 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft_list.h"
 
 /**
- * @brief Iterates over a singly linked list and applies a function to each node's content.
+ * @brief Iterates over a singly linked list and
+ * applies a function to each node's content.
  *
  * This function traverses the list starting at @p lst and applies the
  * function @p f to the content of each node.

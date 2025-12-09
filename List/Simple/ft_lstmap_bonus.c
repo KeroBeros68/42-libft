@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:38:19 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/30 14:48:50 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/09 11:47:03 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,8 @@ static t_list	*map_add_back(t_list **newlst, void *content,
 }
 
 /**
- * @brief Creates a new list by applying a function to each element of an existing list.
+ * @brief Creates a new list by applying a function to each
+ * 	element of an existing list.
  *
  * This function iterates over the list @p lst, applies the function @p f
  * to each node's content, and constructs a new list with the results.
@@ -80,13 +81,11 @@ static t_list	*map_add_back(t_list **newlst, void *content,
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*newlst;
-	t_list	*start;
 	void	*content;
 
 	newlst = NULL;
 	if (!lst || !f || !del)
 		return (NULL);
-	start = lst;
 	while (lst)
 	{
 		content = f(lst->content);

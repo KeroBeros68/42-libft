@@ -6,32 +6,27 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 11:36:06 by kebertra          #+#    #+#             */
-/*   Updated: 2025/12/02 15:43:41 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/09 12:22:19 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft_list.h"
 
 /**
- * @brief Deletes a single node from a circular linked list.
+ * @brief Deletes a node from a circular doubly linked list.
  *
- * This function removes the node @p to_delete from the circular list
- * referenced by @p head. Its content is destroyed using the @p del
- * callback before the node is freed. The list links and head marker
- * are updated to preserve the circular structure.
+ * This function removes the specified node from a circular doubly linked list,
+ * updates the surrounding links, handles the head pointer if necessary, and
+ * frees the node's memory. If a delete function is provided, it is used to
+ * free the node's content before the node itself is released.
  *
- * @param head       Address of a pointer to the head of the circular list.
- * @param to_delete  Pointer to the node that must be removed.
- * @param del        Function used to delete the node's content.
- *
- * @note If @p head, @p *head, or @p to_delete is NULL,
- * the function does nothing.
+ * @param head Pointer to the list's head pointer.
+ * @param to_delete The node to remove from the list.
+ * @param del Optional function used to free the node's content.
  */
 void	ft_lstdelone_c(t_list **head, t_list *to_delete,
 	void (*del)(void *))
 {
-	t_list	*prev;
-
 	if (!head || !*head || !to_delete)
 		return ;
 	if (del && to_delete->content)
@@ -42,12 +37,15 @@ void	ft_lstdelone_c(t_list **head, t_list *to_delete,
 		free(to_delete);
 		return ;
 	}
-	prev = ft_lst_predecessor(to_delete);
-	ft_lst_relink(prev, to_delete);
+	to_delete->prev->next = to_delete->next;
+	to_delete->next->prev = to_delete->prev;
 	if (*head == to_delete)
 	{
 		*head = to_delete->next;
-		ft_lsthead_update(*head);
+		to_delete->head = false;
+		(*head)->head = true;
 	}
+	to_delete->next = NULL;
+	to_delete->prev = NULL;
 	free(to_delete);
 }
