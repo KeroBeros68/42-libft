@@ -100,10 +100,7 @@ LST_S = \
 		ft_lstdelone_bonus.c 
 
 LST_C = \
-		ft_lst_relink.c \
 		ft_lstdelone_circular.c \
-		ft_lsthead_update.c \
-		ft_lstpredecessor.c \
 		ft_lstclear_c.c \
 		ft_lstadd_circular.c \
 		ft_lstnew_circular.c \
