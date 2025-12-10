@@ -106,6 +106,9 @@ LST_C = \
 		ft_lstnew_circular.c \
 		ft_lstsize_circular.c
 
+GNL = \
+		get_next_line.c
+
 SRCS =	$(addprefix Mem/,$(MEM)) \
 		$(addprefix Str/,$(STR)) \
 		$(addprefix Char/,$(CHR)) \
@@ -114,9 +117,10 @@ SRCS =	$(addprefix Mem/,$(MEM)) \
 		$(addprefix Utils/,$(UTILS)) \
 		$(addprefix List/,$(LST_S)) \
 		$(addprefix List/,$(LST_C)) \
-		$(addprefix Printf/,$(PRINTF))
+		$(addprefix Printf/,$(PRINTF)) \
+		$(addprefix GNL/,$(GNL))
 
-vpath %.c ./Mem:./Str:./Char:./Fd:./Maths:./List/Simple:./List/Circular:./Utils:./Printf
+vpath %.c ./Mem:./Str:./Char:./Fd:./Maths:./List/Simple:./List/Circular:./Utils:./Printf:./GNL
 
 INCLUDES = \
 			libft.h \
@@ -127,7 +131,8 @@ INCLUDES = \
 			Maths/libft_maths.h \
 			Utils/libft_utils.h \
 			Fd/libft_fd.h \
-			Printf/libft_printf.h
+			Printf/libft_printf.h \
+			GNL/libft_gnl.h
 
 # Compilation
 CC = cc
