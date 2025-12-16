@@ -6,24 +6,24 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 19:18:13 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:01:33 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:03:29 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Applique une fonction à chaque caractère d'une chaîne
- * et retourne une nouvelle chaîne.
+ * @brief Applies a function to each character of a string
+ * and returns a new string.
  *
- * Parcourt la chaîne `s`, applique la fonction `f` à chaque caractère
- * (en lui passant l'index et le caractère) et retourne une nouvelle chaîne
- * contenant les résultats.
+ * Iterates through the string `s`, applies the function `f` to each character
+ * (passing it the index and the character) and returns a new string
+ * containing the results.
  *
- * @param s  Chaîne de caractères à transformer.
- * @param f  Fonction à appliquer à chaque caractère (index, caractère).
+ * @param s  String to transform.
+ * @param f  Function to apply to each character (index, character).
  *
- * @return char*  Nouvelle chaîne résultante, ou NULL en cas d'échec.
+ * @return char*  New resulting string, or NULL if an error occurs.
  */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

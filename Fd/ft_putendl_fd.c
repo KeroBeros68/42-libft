@@ -6,23 +6,22 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 17:32:01 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:03:42 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:56:21 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Écrit une chaîne de caractères suivie d'un saut de ligne sur
- * un descripteur de fichier.
+ * @brief Writes a string followed by a newline to a file descriptor.
  *
- * Envoie la chaîne `s` sur le descripteur `fd`, puis ajoute un '\n' à la fin.
+ * Sends the string `s` to the file descriptor `fd`, then adds a '\n' at the end.
  *
- * @param s   Chaîne de caractères à écrire. Si NULL, ne fait rien.
- * @param fd  Descripteur de fichier où écrire la chaîne.
+ * @param s   String to write. If NULL, does nothing.
+ * @param fd  File descriptor where to write the string.
  *
- * @return ssize_t  Nombre total d'octets écrits (y compris le '\n'),
- * ou -1 en cas d'erreur.
+ * @return ssize_t  Total number of bytes written (including the '\n'),
+ * or -1 if an error occurs.
  */
 ssize_t	ft_putendl_fd(char *s, int fd)
 {

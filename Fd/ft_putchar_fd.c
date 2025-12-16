@@ -6,21 +6,21 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 17:17:23 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:03:37 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:56:12 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Écrit un caractère sur le descripteur de fichier donné.
+ * @brief Writes a character to the given file descriptor.
  *
- * Envoie le caractère `c` vers le descripteur de fichier `fd`.
+ * Sends the character `c` to the file descriptor `fd`.
  *
- * @param c   Caractère à écrire.
- * @param fd  Descripteur de fichier où écrire le caractère.
+ * @param c   Character to write.
+ * @param fd  File descriptor where to write the character.
  *
- * @return ssize_t  Nombre d'octets écrits (1 si succès, -1 si erreur).
+ * @return ssize_t  Number of bytes written (1 if success, -1 if error).
  */
 ssize_t	ft_putchar_fd(char c, int fd)
 {

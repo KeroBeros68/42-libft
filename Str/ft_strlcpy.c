@@ -6,23 +6,23 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 09:28:10 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:01:25 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:03:28 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Copie une chaîne dans une autre en limitant le nombre d'octets.
+ * @brief Copies a string into another while limiting the number of bytes.
  *
- * Copie au plus `size - 1` caractères de `src` vers `dst` et termine
- * toujours la chaîne par '\0'. Si `size` vaut 0, aucun caractère n'est copié.
+ * Copies at most `size - 1` characters from `src` to `dst` and always
+ * terminates the string with '\0'. If `size` is 0, no character is copied.
  *
- * @param dst   Chaîne de destination.
- * @param src   Chaîne source à copier.
- * @param size  Taille maximale à copier, incluant le '\0'.
+ * @param dst   Destination string.
+ * @param src   Source string to copy.
+ * @param size  Maximum size to copy, including the '\0'.
  *
- * @return size_t  Longueur de la chaîne source `src`.
+ * @return size_t  Length of the source string `src`.
  */
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {

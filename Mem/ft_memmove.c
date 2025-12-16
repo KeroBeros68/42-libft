@@ -6,24 +6,24 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:05:52 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 17:56:26 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:02:57 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Copie un bloc mémoire vers un autre en partant de la fin.
+ * @brief Copies a memory block to another starting from the end.
  *
- * Copie `n` octets du bloc mémoire `src` vers le bloc `dest` en
- * commençant par le dernier octet. Utile pour gérer les chevauchements
- * lorsqu'on doit copier en arrière.
+ * Copies `n` bytes from the `src` memory block to the `dest` block by
+ * starting with the last byte. Useful for handling overlaps
+ * when copying backwards.
  *
- * @param dest  Pointeur vers le bloc mémoire de destination.
- * @param src   Pointeur vers le bloc mémoire source.
- * @param n     Nombre d'octets à copier.
+ * @param dest  Pointer to the destination memory block.
+ * @param src   Pointer to the source memory block.
+ * @param n     Number of bytes to copy.
  *
- * @return void*  Pointeur vers la mémoire de destination `dest`.
+ * @return void*  Pointer to the destination memory `dest`.
  */
 static void	*ft_memcpybckw(void *dest, const void *src, size_t n)
 {
@@ -41,17 +41,17 @@ static void	*ft_memcpybckw(void *dest, const void *src, size_t n)
 }
 
 /**
- * @brief Copie un bloc mémoire vers un autre en gérant le chevauchement.
+ * @brief Copies a memory block to another while handling overlap.
  *
- * Si les blocs se chevauchent et que `dest` est après `src`, la copie
- * est effectuée en partant de la fin pour éviter l'écrasement.
- * Sinon, une copie classique est réalisée.
+ * If the blocks overlap and `dest` is after `src`, the copy
+ * is performed starting from the end to avoid overwriting.
+ * Otherwise, a standard copy is performed.
  *
- * @param dest  Pointeur vers le bloc mémoire de destination.
- * @param src   Pointeur vers le bloc mémoire source.
- * @param n     Nombre d'octets à copier.
+ * @param dest  Pointer to the destination memory block.
+ * @param src   Pointer to the source memory block.
+ * @param n     Number of bytes to copy.
  *
- * @return void*  Pointeur vers la mémoire de destination `dest`.
+ * @return void*  Pointer to the destination memory `dest`.
  */
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {

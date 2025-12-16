@@ -6,23 +6,23 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:04:48 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 17:56:18 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:02:57 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Copie un bloc mémoire vers un autre.
+ * @brief Copies a memory block to another.
  *
- * Copie `n` octets du bloc mémoire `src` vers le bloc `dest`.
- * Les blocs ne doivent pas se chevaucher.
+ * Copies `n` bytes from the `src` memory block to the `dest` block.
+ * The blocks must not overlap.
  *
- * @param dest  Pointeur vers le bloc mémoire de destination.
- * @param src   Pointeur vers le bloc mémoire source.
- * @param n     Nombre d'octets à copier.
+ * @param dest  Pointer to the destination memory block.
+ * @param src   Pointer to the source memory block.
+ * @param n     Number of bytes to copy.
  *
- * @return void*  Pointeur vers la mémoire de destination `dest`.
+ * @return void*  Pointer to the destination memory `dest`.
  */
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

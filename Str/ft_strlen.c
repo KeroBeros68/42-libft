@@ -6,21 +6,21 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:06:58 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:01:28 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:04:32 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Calcule la longueur d'une chaîne de caractères.
+ * @brief Calculates the length of a string.
  *
- * Parcourt la chaîne `s` jusqu'au caractère nul et retourne le nombre
- * de caractères avant le '\0'.
+ * Iterates through the string `s` until the null character and returns
+ * the number of characters before the '\0'.
  *
- * @param s  Chaîne de caractères dont on veut connaître la longueur.
+ * @param s  String whose length is needed.
  *
- * @return size_t  Longueur de la chaîne.
+ * @return size_t  Length of the string.
  */
 size_t	ft_strlen(const char *s)
 {

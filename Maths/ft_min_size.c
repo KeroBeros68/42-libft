@@ -6,21 +6,21 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 21:12:44 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:07:38 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:57:14 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Retourne la plus petite des deux tailles.
+ * @brief Returns the smaller of two size values.
  *
- * Compare deux valeurs de type `size_t` et retourne la plus petite.
+ * Compares two `size_t` values and returns the smaller one.
  *
- * @param a  Première taille à comparer.
- * @param b  Deuxième taille à comparer.
+ * @param a  First size to compare.
+ * @param b  Second size to compare.
  *
- * @return size_t  La valeur minimale entre `a` et `b`.
+ * @return size_t  The minimum value between `a` and `b`.
  */
 size_t	ft_min_size(size_t a, size_t b)
 {

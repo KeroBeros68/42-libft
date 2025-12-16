@@ -6,28 +6,28 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:45:47 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 17:56:33 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:02:59 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Réalloue un bloc mémoire en conservant les données existantes.
+ * @brief Reallocates a memory block while preserving existing data.
  *
- * Cette fonction alloue un nouveau bloc mémoire de taille `new_size`, copie
- * les données du bloc original `ptr` (jusqu'à la taille minimale entre
- * `old_size` et `new_size`), puis libère l'ancien bloc.
+ * This function allocates a new memory block of size `new_size`, copies
+ * data from the original block `ptr` (up to the minimum size between
+ * `old_size` and `new_size`), then frees the old block.
  *
- * @param ptr       Pointeur vers le bloc mémoire à réallouer. Peut être NULL.
- * @param old_size  Taille actuelle du bloc mémoire pointé par `ptr`.
- * @param new_size  Nouvelle taille souhaitée pour le bloc mémoire.
+ * @param ptr       Pointer to the memory block to reallocate. Can be NULL.
+ * @param old_size  Current size of the memory block pointed to by `ptr`.
+ * @param new_size  Desired new size for the memory block.
  *
- * @return void*    Pointeur vers le nouveau bloc mémoire alloué, ou NULL si
- *                  l'allocation échoue ou si `new_size` vaut 0.
+ * @return void*    Pointer to the newly allocated memory block, or NULL if
+ *                  allocation fails or if `new_size` is 0.
  *
- * @note Si `ptr` est NULL, la fonction se comporte comme malloc.
- * @note Si `new_size` est 0, le bloc original est libéré et NULL est retourné.
+ * @note If `ptr` is NULL, the function behaves like malloc.
+ * @note If `new_size` is 0, the original block is freed and NULL is returned.
  */
 void	*ft_realloc(void *ptr, const size_t old_size, const size_t new_size)
 {

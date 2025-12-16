@@ -6,19 +6,19 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:04:23 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/26 21:37:30 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:02:53 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @brief Vérifie si un caractère est imprimable.
+ * @brief Verifies if a character is printable.
  *
- * Retourne vrai si `c` est un caractère imprimable
- * (codes ASCII 32 à 126 inclus).
+ * Returns true if `c` is a printable character
+ * (ASCII codes 32 to 126 inclusive).
  *
- * @param c  Caractère à tester.
+ * @param c  Character to test.
  *
- * @return int  Non nul si `c` est imprimable, 0 sinon.
+ * @return int  Non-zero if `c` is printable, 0 otherwise.
  */
 int	ft_isprint(int c)
 {

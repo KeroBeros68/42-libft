@@ -6,23 +6,23 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:45:47 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 17:56:05 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:04:32 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Alloue de la mémoire et initialise tous les octets à zéro.
+ * @brief Allocates memory and initializes all bytes to zero.
  *
- * Alloue un bloc de mémoire de `nmemb * size` octets
- * et le remplit avec des zéros.
- * Vérifie les débordements lors du calcul de la taille totale.
+ * Allocates a memory block of `nmemb * size` bytes
+ * and fills it with zeros.
+ * Checks for overflow when calculating the total size.
  *
- * @param nmemb  Nombre d'éléments à allouer.
- * @param size   Taille de chaque élément en octets.
+ * @param nmemb  Number of elements to allocate.
+ * @param size   Size of each element in bytes.
  *
- * @return void*  Pointeur vers le bloc mémoire alloué, ou NULL en cas d'échec.
+ * @return void*  Pointer to the allocated memory block, or NULL if error.
  */
 void	*ft_calloc(size_t nmemb, size_t size)
 {

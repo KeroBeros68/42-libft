@@ -6,20 +6,20 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:02:41 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 17:59:56 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:02:51 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Vérifie si un caractère est alphanumérique.
+ * @brief Verifies if a character is alphanumeric.
  *
- * Retourne vrai si `c` est une lettre (a-z, A-Z) ou un chiffre (0-9).
+ * Returns true if `c` is a letter (a-z, A-Z) or a digit (0-9).
  *
- * @param c  Caractère à tester.
+ * @param c  Character to test.
  *
- * @return int  Non nul si `c` est alphanumérique, 0 sinon.
+ * @return int  Non-zero if `c` is alphanumeric, 0 otherwise.
  */
 int	ft_isalnum(int c)
 {

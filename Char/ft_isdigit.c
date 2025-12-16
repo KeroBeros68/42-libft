@@ -6,18 +6,18 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:03:52 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/26 21:37:09 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:03:01 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @brief Vérifie si un caractère est un chiffre décimal.
+ * @brief Verifies if a character is a decimal digit.
  *
- * Retourne vrai si `c` est compris entre '0' et '9'.
+ * Returns true if `c` is between '0' and '9'.
  *
- * @param c  Caractère à tester.
+ * @param c  Character to test.
  *
- * @return int  Non nul si `c` est un chiffre, 0 sinon.
+ * @return int  Non-zero if `c` is a digit, 0 otherwise.
  */
 int	ft_isdigit(int c)
 {

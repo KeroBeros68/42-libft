@@ -6,24 +6,24 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 18:08:10 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:01:52 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:57:35 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Extrait une sous-chaîne d'une chaîne donnée.
+ * @brief Extracts a substring from a given string.
  *
- * Crée une nouvelle chaîne allouée contenant `len` caractères de `s`
- * à partir de l'index `start`. Si `start` est supérieur à la longueur
- * de `s`, retourne une chaîne vide.
+ * Creates a newly allocated string containing `len` characters from `s`
+ * starting at index `start`. If `start` is greater than the length
+ * of `s`, returns an empty string.
  *
- * @param s      Chaîne source.
- * @param start  Index de départ pour l'extraction.
- * @param len    Nombre de caractères à extraire.
+ * @param s      Source string.
+ * @param start  Starting index for extraction.
+ * @param len    Number of characters to extract.
  *
- * @return char*  Nouvelle sous-chaîne allouée, ou NULL en cas d'échec.
+ * @return char*  Newly allocated substring, or NULL if an error occurs.
  */
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {

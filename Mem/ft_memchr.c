@@ -6,23 +6,23 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:22:11 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 17:56:09 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:02:56 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Recherche un octet dans un bloc mémoire.
+ * @brief Searches for a byte in a memory block.
  *
- * Parcourt les `n` premiers octets du bloc pointé par `s` et
- * retourne un pointeur vers le premier octet égal à `c`.
+ * Iterates through the first `n` bytes of the block pointed to by `s` and
+ * returns a pointer to the first byte equal to `c`.
  *
- * @param s  Pointeur vers le bloc mémoire à parcourir.
- * @param c  Octet à rechercher (converti en unsigned char).
- * @param n  Nombre d'octets à examiner.
+ * @param s  Pointer to the memory block to search through.
+ * @param c  Byte to search for (converted to unsigned char).
+ * @param n  Number of bytes to examine.
  *
- * @return void*  Pointeur vers l'octet trouvé, ou NULL si non trouvé.
+ * @return void*  Pointer to the byte found, or NULL if not found.
  */
 void	*ft_memchr(const void *s, int c, size_t n)
 {

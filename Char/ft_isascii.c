@@ -6,18 +6,18 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:03:01 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/26 21:36:49 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:03:01 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @brief Vérifie si un caractère fait partie de la table ASCII.
+ * @brief Verifies if a character is part of the ASCII table.
  *
- * Retourne vrai si `c` est compris entre 0 et 127 inclus.
+ * Returns true if `c` is between 0 and 127 inclusive.
  *
- * @param c  Caractère à tester.
+ * @param c  Character to test.
  *
- * @return int  Non nul si `c` est un caractère ASCII, 0 sinon.
+ * @return int  Non-zero if `c` is an ASCII character, 0 otherwise.
  */
 int	ft_isascii(int c)
 {

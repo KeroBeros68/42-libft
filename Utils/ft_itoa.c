@@ -6,21 +6,21 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/31 17:50:59 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:08:30 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:04:32 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Compte le nombre de chiffres d'un entier.
+ * @brief Counts the number of digits in an integer.
  *
- * Calcule combien de caractères sont nécessaires pour représenter
- * l'entier `n` en base 10, sans tenir compte du signe.
+ * Calculates how many characters are needed to represent
+ * the integer `n` in base 10, ignoring the sign.
  *
- * @param n  Entier dont on veut connaître le nombre de chiffres.
+ * @param n  Integer whose digit count is needed.
  *
- * @return size_t  Nombre de chiffres de `n`.
+ * @return size_t  Number of digits of `n`.
  */
 static size_t	countchar(int n)
 {
@@ -36,15 +36,16 @@ static size_t	countchar(int n)
 }
 
 /**
- * @brief Remplit une chaîne avec la représentation décimale d'un entier.
+ * @brief Fills a string with the decimal representation of an integer.
  *
- * Place les chiffres de `n` dans la chaîne `s`, en partant de la fin.
- * Si `sign` est non nul, ajoute un '-' au début de la chaîne.
+ * Places the digits of `n` in the string `s`, starting from the end.
+ * If `sign` is nonzero, adds a '-' at the beginning of the string.
  *
- * @param s      Chaîne dans laquelle écrire le nombre.
- * @param n      Entier à convertir.
- * @param count  Nombre total de caractères représentant le nombre (hors '\0').
- * @param sign   Indique si le nombre est négatif (1) ou non (0).
+ * @param s      String in which to write the number.
+ * @param n      Integer to convert.
+ * @param count  Total number of characters representing the number
+ *               (excluding '\0').
+ * @param sign   Indicates if the number is negative (1) or not (0).
  */
 static void	setnum(char *s, int n, size_t count, int sign)
 {
@@ -66,15 +67,15 @@ static void	setnum(char *s, int n, size_t count, int sign)
 }
 
 /**
- * @brief Convertit un entier en chaîne de caractères.
+ * @brief Converts an integer to a string.
  *
- * Gère le cas particulier de INT_MIN, détermine le signe, calcule le
- * nombre de chiffres nécessaires et remplit la chaîne résultat.
+ * Handles the special case of INT_MIN, determines the sign, calculates the
+ * number of necessary digits, and fills the result string.
  *
- * @param n  Entier à convertir en chaîne.
+ * @param n  Integer to convert to a string.
  *
- * @return char*  Chaîne représentant l'entier, ou NULL en cas d'échec
- *                d'allocation.
+ * @return char*  String representing the integer, or NULL if an allocation
+ *                error occurs.
  */
 char	*ft_itoa(int n)
 {

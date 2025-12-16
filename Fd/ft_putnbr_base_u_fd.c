@@ -6,28 +6,27 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 20:32:09 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:03:47 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:56:27 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Prépare un nombre pour l'écriture en base
- * sur un descripteur de fichier.
+ * @brief Prepares an integer for base conversion on a file descriptor.
  *
- * Convertit le nombre `nbr` en `unsigned long long`
- * et gère le signe si nécessaire.
- * Écrit le signe '-' sur le descripteur `fd` si le nombre est négatif
- * et non non signé.
+ * Converts the number `nbr` to `unsigned long long`
+ * and handles the sign if necessary.
+ * Writes the '-' sign to the file descriptor `fd` if the number is negative
+ * and not unsigned.
  *
- * @param u    Indicateur de signe : 0 pour nombre signé, 1 pour non signé.
- * @param n    Pointeur vers la variable où stocker la valeur convertie.
- * @param nbr  Nombre entier à préparer.
- * @param fd   Descripteur de fichier pour l'écriture du signe si nécessaire.
+ * @param u    Sign indicator: 0 for signed number, 1 for unsigned.
+ * @param n    Pointer to the variable where to store the converted value.
+ * @param nbr  Integer to prepare.
+ * @param fd   File descriptor for writing the sign if necessary.
  *
- * @return ssize_t  0 si aucun caractère ajouté, 1 si le '-' a été écrit,
- * -1 en cas d'erreur.
+ * @return ssize_t  0 if no character added, 1 if '-' was written,
+ * -1 if an error occurs.
  */
 static ssize_t	ftputnbrbase_helper(int u, unsigned long long *n,
 	long long nbr, int fd)
@@ -47,22 +46,21 @@ static ssize_t	ftputnbrbase_helper(int u, unsigned long long *n,
 }
 
 /**
- * @brief Écrit un nombre entier sur un descripteur de fichier
- * dans une base donnée.
+ * @brief Writes an integer to a file descriptor in a given base.
  *
- * Convertit `nbr` en chaîne de caractères selon la base fournie par `base`
- * et l'écrit sur le descripteur `fd`.
- * Gère les nombres négatifs si `u` est non nul.
+ * Converts `nbr` to a string according to the base provided by `base`
+ * and writes it to the file descriptor `fd`.
+ * Handles negative numbers if `u` is nonzero.
  *
- * @param nbr   Nombre entier à écrire.
- * @param base  Chaîne représentant les caractères de la base
- * (ex: "0123456789ABCDEF").
- * @param u     Indicateur de signe : 0 pour non signé, 1 pour signé.
- * @param fd    Descripteur de fichier où écrire le nombre.
+ * @param nbr   Integer to write.
+ * @param base  String representing the characters of the base
+ * (e.g., "0123456789ABCDEF").
+ * @param u     Sign indicator: 0 for unsigned, 1 for signed.
+ * @param fd    File descriptor where to write the number.
  *
- * @return ssize_t  Nombre total de caractères écrits, ou -1 en cas d'erreur.
+ * @return ssize_t  Total number of characters written, or -1 if an error occurs.
  *
- * @note La fonction vérifie la validité de la base avant conversion.
+ * @note The function validates the base before conversion.
  */
 ssize_t	ft_putnbr_base_u_fd(long long nbr, const char *base,
 			const int u, int fd)

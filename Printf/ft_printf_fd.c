@@ -6,25 +6,24 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:26:13 by kebertra          #+#    #+#             */
-/*   Updated: 2025/12/01 17:57:17 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:56:43 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Écrit une chaîne ou un pointeur en gérant les valeurs NULL
- * pour ft_printf.
+ * @brief Writes a string or pointer, handling NULL values for ft_printf.
  *
- * Pour un spécificateur 's', écrit la chaîne ou "(null)" si NULL.
- * Pour un spécificateur 'p', écrit l'adresse du pointeur au format hexadécimal,
- * ou "(nil)" si NULL.
+ * For a 's' specifier, writes the string or "(null)" if NULL.
+ * For a 'p' specifier, writes the pointer address in hexadecimal format,
+ * or "(nil)" if NULL.
  *
- * @param args  Liste d'arguments variable issue de va_list.
- * @param c     Spécificateur de format ('s' pour chaîne, 'p' pour pointeur).
+ * @param args  Variable argument list from va_list.
+ * @param c     Format specifier ('s' for string, 'p' for pointer).
  *
- * @return ssize_t  Nombre de caractères écrits,
- * ou -1 en cas d'erreur d'écriture.
+ * @return ssize_t  Number of characters written,
+ * or -1 if a write error occurs.
  */
 static ssize_t	printf_check_null(va_list args, char c, int fd)
 {
@@ -50,17 +49,17 @@ static ssize_t	printf_check_null(va_list args, char c, int fd)
 }
 
 /**
- * @brief Traite un spécificateur de format pour ft_printf et écrit le résultat.
+ * @brief Processes a format specifier for ft_printf and writes the result.
  *
- * Selon le caractère de format `c`, récupère l'argument correspondant dans
- * `args` et l'écrit sur la sortie standard.
+ * Based on the format character `c`, retrieves the corresponding argument from
+ * `args` and writes it to standard output.
  *
- * @param args  Liste d'arguments variable issue de va_list.
- * @param c     Spécificateur de format 
+ * @param args  Variable argument list from va_list.
+ * @param c     Format specifier
  * ('d', 'i', 'u', 'c', 's', 'p', 'x', 'X', '%').
  *
- * @return ssize_t  Nombre de caractères écrits,
- * ou 0 si le spécificateur n'est pas reconnu.
+ * @return ssize_t  Number of characters written,
+ * or 0 if the specifier is not recognized.
  */
 static ssize_t	printf_print_res(va_list args, char c, int fd)
 {

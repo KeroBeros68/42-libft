@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/30 13:30:14 by kebertra          #+#    #+#             */
-/*   Updated: 2025/12/09 13:07:11 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:52:52 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	ft_lstclear_c(t_list **lst, void (*del)(void *))
 {
 	if (!lst || !*lst)
 		return ;
-
 	while (*lst)
 		ft_lstdelone_c(lst, *lst, del);
 }

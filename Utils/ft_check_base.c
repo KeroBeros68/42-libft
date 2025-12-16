@@ -6,22 +6,22 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 15:33:02 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:09:42 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:57:48 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Vérifie la validité d'une base pour la conversion de nombres.
+ * @brief Verifies the validity of a base for number conversion.
  *
- * Une base est valide si elle contient au moins deux caractères,
- * ne contient ni '+' ni '-', et ne comporte pas de caractères répétés.
+ * A base is valid if it contains at least two characters,
+ * contains neither '+' nor '-', and has no repeated characters.
  *
- * @param base      Chaîne représentant la base à vérifier.
- * @param len_base  Longueur de la base.
+ * @param base      String representing the base to verify.
+ * @param len_base  Length of the base.
  *
- * @return int  TRUE (1) si la base est valide, FALSE (0) sinon.
+ * @return int  TRUE (1) if the base is valid, FALSE (0) otherwise.
  */
 int	ft_check_base(const char *base, size_t len_base)
 {

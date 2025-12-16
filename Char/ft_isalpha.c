@@ -6,18 +6,18 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 14:01:08 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/26 21:36:32 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:02:47 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /**
- * @brief Vérifie si un caractère est alphabétique.
+ * @brief Verifies if a character is alphabetic.
  *
- * Retourne vrai si `c` est une lettre majuscule (A-Z) ou minuscule (a-z).
+ * Returns true if `c` is an uppercase letter (A-Z) or lowercase letter (a-z).
  *
- * @param c  Caractère à tester.
+ * @param c  Character to test.
  *
- * @return int  Non nul si `c` est alphabétique, 0 sinon.
+ * @return int  Non-zero if `c` is alphabetic, 0 otherwise.
  */
 int	ft_isalpha(int c)
 {

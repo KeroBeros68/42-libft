@@ -6,23 +6,23 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/30 16:41:18 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:01:16 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:03:27 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Concatène deux chaînes de caractères dans une nouvelle chaîne.
+ * @brief Concatenates two strings into a new string.
  *
- * Alloue de la mémoire pour contenir `s1` suivi de `s2`, puis copie
- * les deux chaînes dans le nouvel espace mémoire.
+ * Allocates memory to hold `s1` followed by `s2`, then copies
+ * both strings into the new memory space.
  *
- * @param s1  Première chaîne à concaténer.
- * @param s2  Deuxième chaîne à concaténer.
+ * @param s1  First string to concatenate.
+ * @param s2  Second string to concatenate.
  *
- * @return char*  Pointeur vers la nouvelle chaîne allouée,
- * ou NULL en cas d'échec.
+ * @return char*  Pointer to the newly allocated string,
+ * or NULL if an error occurs.
  */
 char	*ft_strjoin(char const *s1, char const *s2)
 {

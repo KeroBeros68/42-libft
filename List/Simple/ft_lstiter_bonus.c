@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 18:34:03 by kebertra          #+#    #+#             */
-/*   Updated: 2025/12/09 13:01:42 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:53:17 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@
  */
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-
 	if (!lst || !f)
 		return ;
 	while (lst)

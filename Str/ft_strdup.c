@@ -6,22 +6,22 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 16:41:34 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:01:08 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:03:26 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Duplique une chaîne de caractères.
+ * @brief Duplicates a string.
  *
- * Alloue de la mémoire pour une nouvelle chaîne et copie le contenu
- * de `s` dedans, y compris le caractère nul final.
+ * Allocates memory for a new string and copies the content
+ * from `s` into it, including the final null character.
  *
- * @param s  Chaîne de caractères source à dupliquer.
+ * @param s  Source string to duplicate.
  *
- * @return char*  Pointeur vers la nouvelle chaîne allouée,
- * ou NULL en cas d'échec.
+ * @return char*  Pointer to the newly allocated string,
+ * or NULL if an error occurs.
  */
 char	*ft_strdup(const char *s)
 {

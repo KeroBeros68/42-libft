@@ -6,25 +6,25 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 13:30:43 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:01:41 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:56:53 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Recherche une sous-chaîne dans une chaîne avec une limite de longueur.
+ * @brief Searches for a substring in a string with a length limit.
  *
- * Parcourt la chaîne `big` jusqu'à `len` caractères et retourne un
- * pointeur vers la première occurrence de `little`. Si `little` est
- * une chaîne vide, retourne `big`.
+ * Iterates through the string `big` up to `len` characters and returns a
+ * pointer to the first occurrence of `little`. If `little` is
+ * an empty string, returns `big`.
  *
- * @param big     Chaîne dans laquelle chercher.
- * @param little  Sous-chaîne à trouver.
- * @param len     Nombre maximal de caractères à examiner dans `big`.
+ * @param big     String to search in.
+ * @param little  Substring to find.
+ * @param len     Maximum number of characters to examine in `big`.
  *
- * @return char*  Pointeur vers la première occurrence de `little` dans `big`,
- *                ou NULL si non trouvée.
+ * @return char*  Pointer to the first occurrence of `little` in `big`,
+ *                or NULL if not found.
  */
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

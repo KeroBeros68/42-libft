@@ -6,21 +6,21 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 17:56:28 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:00:04 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:03:00 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Convertit une lettre majuscule en minuscule.
+ * @brief Converts an uppercase letter to lowercase.
  *
- * Si `c` est une lettre majuscule (A-Z), retourne sa version minuscule.
- * Sinon, retourne `c` inchangé.
+ * If `c` is an uppercase letter (A-Z), returns its lowercase version.
+ * Otherwise, returns `c` unchanged.
  *
- * @param c  Caractère à convertir.
+ * @param c  Character to convert.
  *
- * @return int  Caractère converti en minuscule, ou `c` inchangé.
+ * @return int  Character converted to lowercase, or `c` unchanged.
  */
 int	ft_tolower(int c)
 {

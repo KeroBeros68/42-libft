@@ -5,3 +5,4 @@
 .vscode
 *.a
 test.c
+a.out

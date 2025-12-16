@@ -6,22 +6,22 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 13:58:38 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 17:55:41 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:02:58 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Remplit un bloc mémoire avec un octet donné.
+ * @brief Fills a memory block with a given byte.
  *
- * Écrit `n` octets de valeur `c` dans le bloc mémoire pointé par `s`.
+ * Writes `n` bytes of value `c` to the memory block pointed to by `s`.
  *
- * @param s  Pointeur vers le bloc mémoire à remplir.
- * @param c  Octet à écrire (converti en unsigned char).
- * @param n  Nombre d'octets à remplir.
+ * @param s  Pointer to the memory block to fill.
+ * @param c  Byte to write (converted to unsigned char).
+ * @param n  Number of bytes to fill.
  *
- * @return void*  Pointeur vers le bloc mémoire `s`.
+ * @return void*  Pointer to the memory block `s`.
  */
 void	*ft_memset(void *s, int c, size_t n)
 {

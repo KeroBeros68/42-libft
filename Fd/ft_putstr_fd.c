@@ -6,22 +6,22 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 17:26:24 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:03:53 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:56:24 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Écrit une chaîne de caractères sur un descripteur de fichier.
+ * @brief Writes a string to a file descriptor.
  *
- * Envoie la chaîne `s` caractère par caractère sur le descripteur `fd`.
+ * Sends the string `s` character by character to the file descriptor `fd`.
  *
- * @param s   Chaîne de caractères à écrire. Si NULL, ne fait rien.
- * @param fd  Descripteur de fichier où écrire la chaîne.
+ * @param s   String to write. If NULL, does nothing.
+ * @param fd  File descriptor where to write the string.
  *
- * @return ssize_t  Nombre total de caractères écrits,
- * ou -1 en cas d'erreur d'écriture.
+ * @return ssize_t  Total number of characters written,
+ * or -1 if a write error occurs.
  */
 ssize_t	ft_putstr_fd(char *s, int fd)
 {

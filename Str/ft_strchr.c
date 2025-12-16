@@ -6,23 +6,23 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 18:09:47 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:01:04 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 18:03:13 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Recherche la première occurrence d'un caractère dans une chaîne.
+ * @brief Searches for the first occurrence of a character in a string.
  *
- * Parcourt la chaîne `s` et retourne un pointeur vers la première occurrence
- * de `c`. Si `c` vaut '\0', retourne un pointeur sur le caractère nul final.
+ * Iterates through the string `s` and returns a pointer to the first occurrence
+ * of `c`. If `c` is '\0', returns a pointer to the final null character.
  *
- * @param s  Chaîne de caractères à parcourir.
- * @param c  Caractère à rechercher.
+ * @param s  String to iterate through.
+ * @param c  Character to search for.
  *
- * @return char*  Pointeur vers la première occurrence de `c`,
- * ou NULL si non trouvé.
+ * @return char*  Pointer to the first occurrence of `c`,
+ * or NULL if not found.
  */
 char	*ft_strchr(const char *s, int c)
 {

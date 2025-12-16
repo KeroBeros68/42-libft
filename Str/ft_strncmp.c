@@ -6,25 +6,25 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 10:49:06 by kebertra          #+#    #+#             */
-/*   Updated: 2025/11/27 18:01:36 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/16 17:56:54 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
 /**
- * @brief Compare deux chaînes de caractères sur au plus n caractères.
+ * @brief Compares two strings up to at most n characters.
  *
- * Parcourt les chaînes `s1` et `s2` et retourne la différence entre
- * le premier octet différent trouvé, ou 0 si les n premiers caractères
- * sont identiques ou si une chaîne se termine avant n.
+ * Iterates through strings `s1` and `s2` and returns the difference between
+ * the first byte found that is different, or 0 if the first n characters
+ * are identical or if one string ends before n.
  *
- * @param s1  Première chaîne à comparer.
- * @param s2  Deuxième chaîne à comparer.
- * @param n   Nombre maximal de caractères à comparer.
+ * @param s1  First string to compare.
+ * @param s2  Second string to compare.
+ * @param n   Maximum number of characters to compare.
  *
- * @return int  Différence entre les octets différents,
- * ou 0 si identiques sur n caractères.
+ * @return int  Difference between the different bytes,
+ * or 0 if identical for n characters.
  */
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
