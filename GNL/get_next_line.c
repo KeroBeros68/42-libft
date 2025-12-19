@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 19:19:16 by kebertra          #+#    #+#             */
-/*   Updated: 2025/12/10 13:58:50 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/19 10:01:52 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -141,7 +141,9 @@ static char	*read_line(int fd, t_stay *stay, char *buf)
  * `read_line` to obtain the next line. It validates the `fd` and returns NULL
  * on invalid descriptors or when there is no more data to read.
  *
- * @param fd  File descriptor to read from.
+ * Special case: calling with `fd == -1` frees all accumulated buffers.
+ *
+ * @param fd  File descriptor to read from. Use -1 to cleanup all buffers.
  * @return char* Newly allocated NUL-terminated string containing the next
  *               line (including trailing '\n' if present), or NULL on error
  *               or when no more lines are available.
@@ -151,7 +153,24 @@ char	*get_next_line(int fd)
 	static t_stay	stays[OPEN_MAX];
 	char			*line;
 	char			buf[BUFFER_SIZE + 1];
+	int				i;
 
+	if (fd == -1)
+	{
+		i = 0;
+		while (i < OPEN_MAX)
+		{
+			if (stays[i].stay)
+			{
+				free(stays[i].stay);
+				stays[i].stay = NULL;
+				stays[i].len = 0;
+				stays[i].cap = 0;
+			}
+			i++;
+		}
+		return (NULL);
+	}
 	if (fd < 0 || fd >= OPEN_MAX)
 		return (NULL);
 	line = read_line(fd, &stays[fd], buf);
