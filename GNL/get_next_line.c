@@ -6,7 +6,7 @@
 /*   By: kebertra <kebertra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 19:19:16 by kebertra          #+#    #+#             */
-/*   Updated: 2025/12/19 10:01:52 by kebertra         ###   ########.fr       */
+/*   Updated: 2025/12/19 11:35:40 by kebertra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,8 @@ static char	*read_line(int fd, t_stay *stay, char *buf)
 			return (NULL);
 	}
 	if (bytes_read == 0 && stay->len == 0)
-		return (free(stay->stay), NULL);
+		return (free(stay->stay), stay->stay = NULL,
+			stay->cap = 0, stay->len = 0, NULL);
 	line = ft_gnl_extract_line(stay);
 	return (line);
 }
